@@ -9,11 +9,11 @@ export default async function handler(req, res) {
       payment_method_types: ['card'],
       line_items: [
         {
-          price: 'price_1TPLCT78WosZdp8Wv6WRzo0t', // 200€
+          price: 'price_1TPLCT78WosZdp8Wv6WRzo0t',
           quantity: 1,
         },
         {
-          price: 'price_1TPLCS78WosZdp8WZwEmUahe', // 19€/month
+          price: 'price_1TPLCS78WosZdp8WZwEmUahe',
           quantity: 1,
         },
       ],
@@ -24,7 +24,7 @@ export default async function handler(req, res) {
       cancel_url: 'https://test-ltiart-three-20.vercel.app/cancel',
     });
 
-    return res.status(200).json({ url: session.url });
+    return res.redirect(303, session.url);
   } catch (error) {
     return res.status(500).json({
       error: error.message,
