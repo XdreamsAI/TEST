@@ -9,23 +9,25 @@ export default async function handler(req, res) {
       payment_method_types: ['card'],
       line_items: [
         {
-          price: 'price_1TPJWJ78WosZdp8WyaqqwR8R', // 200€
+          price: 'price_1TPLCT78WosZdp8Wv6WRzo0t', // 200€
           quantity: 1,
         },
         {
-          price: 'price_1TPJWJ78WosZdp8WPOjpnq8U', // 19€/month
+          price: 'price_1TPLCS78WosZdp8WZwEmUahe', // 19€/month
           quantity: 1,
         },
       ],
       subscription_data: {
         trial_period_days: 30,
       },
-      success_url: 'https://example.com/success',
-      cancel_url: 'https://example.com/cancel',
+      success_url: 'https://test-ltiart-three-20.vercel.app/success',
+      cancel_url: 'https://test-ltiart-three-20.vercel.app/cancel',
     });
 
-    res.status(200).json({ url: session.url });
+    return res.status(200).json({ url: session.url });
   } catch (error) {
-    res.status(500).json({ error: error.message });
+    return res.status(500).json({
+      error: error.message,
+    });
   }
 }
