@@ -17,7 +17,7 @@ export default async function handler(req, res) {
       mode: "subscription",
       line_items: [
         {
-          price: "price_1TPMRS78WosZdp8WQZqPeUqs", // 1€ one-time
+          price: "price_1TPMRS78WosZdp8WQZqPeUqs", // 1€ one-timе
           quantity: 1,
         },
         {
